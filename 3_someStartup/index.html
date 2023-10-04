@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Counter Example</title>
+  </head>
+  <body onload="setIndexValue()">
+    <h1>A Simple Counter Demo</h1>
+
+    <div>Counter is currently:</div>
+    <div id="indexValue">--</div>
+    <button>Increment</button>
+  </body>
+</html>
+
+<script>
+  function setIndexValue() {
+    console.log("setting index value");
+    const indexValueDiv = document.getElementById("indexValue");
+    console.log(indexValueDiv);
+    indexValueDiv.innerHTML = "0";
+  }
+</script>

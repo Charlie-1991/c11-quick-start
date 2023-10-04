@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Counter Example</title>
+  </head>
+  <body onload="setIndexValue()">
+    <h1>A Simple Counter Demo</h1>
+
+    <div>Counter is currently:</div>
+    <div id="indexValue">--</div>
+    <button onclick="incrementIndexValue()">Increment</button>
+  </body>
+</html>
+
+<script>
+  function setIndexValue() {
+    console.log("setting index value");
+    fetch("http://localhost:5150/index")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (responseText) {
+        console.log("Receive index from server:", responseText);
+        const indexValueDiv = document.getElementById("indexValue");
+        indexValueDiv.innerHTML = +responseText;
+      });
+  }
+  function incrementIndexValue() {
+    setIndexValue();
+  }
+</script>
