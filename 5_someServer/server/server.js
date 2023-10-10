@@ -13,7 +13,7 @@ app.get("/", function (req, res) {
   res.send("Server is up and running.");
 });
 
-var index = 0;
+var index = 100;
 app.get("/index", function (req, res) {
   res.send(index.toString());
 });
